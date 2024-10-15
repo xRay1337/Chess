@@ -3,12 +3,12 @@ public abstract class Piece {
     private final char pieceSymbol;
     public boolean isDidntMove = true;
 
-    public abstract boolean canMove(Piece[][] board, int line, int column, int toLine, int toColumn);
-
     public Piece(PieceColor pieceColor, char whiteSymbol, char blackSymbol) {
         this.pieceColor = pieceColor;
         this.pieceSymbol = pieceColor.equals(PieceColor.white) ? whiteSymbol : blackSymbol;
     }
+
+    public abstract boolean canMove(Piece[][] board, int line, int column, int toLine, int toColumn);
 
     public PieceColor getColor() {
         return pieceColor;
